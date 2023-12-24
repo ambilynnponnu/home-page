@@ -1,14 +1,19 @@
 import React from 'react'
-import { Route, Routes } from "react-router-dom"
-
-function routes() {
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage'
+import Login from './componets/home/Login.component';
+function Navigation() {
     return (
         <div>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-            </Routes>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/Login" element={<Login />} />
+                </Routes>
+            </Router>
+
         </div>
     )
 }
 
-export default routes
+export default Navigation
