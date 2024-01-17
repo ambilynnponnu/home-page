@@ -7,12 +7,12 @@ function Navbar() {
 
   const navigate=useNavigate()
   return (
-    <div style={{ backgroundColor: "#e3f2fd" }}>
-      <nav className="navbar" >
+    <div>
+      <nav className="navbar home-page-navbar" >
         <div className="container-fluid">
           <a className="navbar-brand" href="#">HOME</a>
           <a className="navbar-brand" onClick={()=>navigate('/Login')}>Login</a>
-          <a className="navbar-brand" onClick={()=>navigate('/Todo')}>Todo</a>
+          {/* <a className="navbar-brand" onClick={()=>navigate('/Todo')}>Todo</a> */}
 
         </div>
       </nav>
