@@ -9,7 +9,8 @@ function Home() {
   return (
     <div className="bg-img">
       <div>
-        <div>Learn to Code</div>
+        <div>
+          <p className="head_h d-flex justify-content-center">Learn to Code</p></div>
       </div>
     </div>
   );
