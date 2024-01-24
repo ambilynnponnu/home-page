@@ -6,7 +6,7 @@ function Navbar() {
   const navigate = useNavigate();
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg navbar-home">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             Navbar
@@ -27,7 +27,7 @@ function Navbar() {
               <a class="nav-link active" aria-current="page" href="#">
                 Home
               </a>
-              <a class="nav-link" href="#">
+              <a class="nav-link" onClick={()=>navigate("/signup")}>
                Signup
               </a>
               <a class="nav-link" onClick={()=>navigate("/Login")}>

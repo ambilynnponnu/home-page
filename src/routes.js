@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Login from "./componets/home/Login.component";
 import Home from "./componets/home/home.component";
-import Todo from "./componets/home/Todo.component";
+import Signupcomponent from "./componets/home/Signup.component";
+import Sidebarcomponent from "./componets/home/Sidebar.component";
 function Navigation() {
   return (
     <div>
@@ -12,7 +13,9 @@ function Navigation() {
           <Route path="/" element={<HomePage />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/todo" element={<Todo />} />
+          <Route path="/signup" element={<Signupcomponent />} />
+          <Route path="/sidebar" element={<Sidebarcomponent />} />
+
         </Routes>
       </Router>
     </div>

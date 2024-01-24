@@ -1,15 +1,16 @@
-
-.home-page-navbar{
-background-color: white;
-color: black;
+.home-page-navbar {
+  background-color: white;
+  color: black;
 }
 
-
-
 body {
-  background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(75,54,58,1) 55%);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(75, 54, 58, 1) 55%
+  );
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   font-size: 30px;
 }
@@ -19,11 +20,10 @@ body {
 .add-task-btn {
   background-color: blue;
 }
-.head_h{
+.head_h {
   color: white;
   font-size: 45px;
 }
-
 
 .box {
   width: 1200px;
@@ -31,4 +31,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 15px;
   margin: 0 auto;
+}
+.submit-btn {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(192, 113, 220, 1) 24%
+  );
+  color: white;
+}
+.navbar-home{
+  color: #fff;
 }
