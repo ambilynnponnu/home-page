@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signupcomponent() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -112,11 +115,20 @@ function Signupcomponent() {
                     </div>
                     <div className="row justify-content-center">
                       <div className="col-3">
-                        <button type="submit" class="btn submit-btn mb-1">
+                        <button type="submit" class="btn submit-btn mb-1" onClick={() => navigate("/")}>
                           Submit
                         </button>
                       </div>
                     </div>
+                    <div className="mb-3">
+                        <label htmlFor="password" className="form-label">
+                          Already have an account?
+                          <span onClick={() => navigate("/login")}>
+                            {" "}
+                            Signup
+                          </span>
+                        </label>
+                      </div>
                   </form>
                 </div>
               </div>

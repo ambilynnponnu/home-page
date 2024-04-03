@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
+  useEffect(() => {
+    axios.get('/api/hello')
+        .then(res => console.log(res))
+        .catch(err => console.error(err));
+}, []);
 
   return (
     <div className="container mt-5">
@@ -37,7 +43,7 @@ function Login() {
                         />
                       </div>
                       <div className="d-grid gap-2">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-primary" onClick={() => navigate("/")}>  
                           Login
                         </button>
                       </div>
