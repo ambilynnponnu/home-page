@@ -3,12 +3,16 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
-  useEffect(() => {
-    axios.get('/api/hello')
-        .then(res => console.log(res))
-        .catch(err => console.error(err));
-}, []);
 
+  const login = () => {
+    axios.post('/loginToApp', {username: "sethu", password: "password"}).then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.error(err)
+        });
+  }
+  
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
@@ -43,7 +47,7 @@ function Login() {
                         />
                       </div>
                       <div className="d-grid gap-2">
-                        <button type="submit" className="btn btn-primary" onClick={() => navigate("/")}>  
+                        <button type="submit" className="btn btn-primary" onClick={() => login()}>  
                           Login
                         </button>
                       </div>

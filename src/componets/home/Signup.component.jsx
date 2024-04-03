@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -36,6 +37,10 @@ function Signupcomponent() {
     // You can also redirect the user to another page or perform additional actions here
     alert("Registration successful");
     console.log("ddd",userData);
+
+    axios.post('/setCredentials', {username: "sethu", password: "password"})
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
 
   };
   return (
@@ -115,7 +120,7 @@ function Signupcomponent() {
                     </div>
                     <div className="row justify-content-center">
                       <div className="col-3">
-                        <button type="submit" class="btn submit-btn mb-1" onClick={() => navigate("/")}>
+                        <button type="submit" class="btn submit-btn mb-1">
                           Submit
                         </button>
                       </div>
