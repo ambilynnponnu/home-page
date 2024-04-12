@@ -6,10 +6,10 @@ function Navbar() {
   const navigate = useNavigate();
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-home">
+      <nav class="navbar navbar-expand-lg navbar-home ms-4 me-4 fixed-top mb-4">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
-            Navbar
+            Vegetables
           </a>
           <button
             class="navbar-toggler"
@@ -22,18 +22,20 @@ function Navbar() {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div
+            class="collapse navbar-collapse navbar-main justify-content-end"
+            id="navbarNavAltMarkup"
+          >
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="#">
                 Home
               </a>
-              <a class="nav-link" onClick={()=>navigate("/signup")}>
-               Signup
+              <a class="nav-link" href="/signup">
+                Signup
               </a>
-              <a class="nav-link" onClick={()=>navigate("/Login")}>
-               Login
+              <a class="nav-link" href="/login">
+                Login
               </a>
-              
             </div>
           </div>
         </div>

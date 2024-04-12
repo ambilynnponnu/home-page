@@ -15,7 +15,6 @@ function Navigation() {
           <Route path="/home" element={<Home />} />
           <Route path="/signup" element={<Signupcomponent />} />
           <Route path="/sidebar" element={<Sidebarcomponent />} />
-
         </Routes>
       </Router>
     </div>

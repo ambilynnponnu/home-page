@@ -5,17 +5,20 @@ import { useNavigate } from "react-router-dom";
 function Signupcomponent() {
   const navigate = useNavigate();
 
+  // State variables to store form data
   const [formData, setFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
+  // Function to handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -27,7 +30,7 @@ function Signupcomponent() {
 
     // Save data to local storage
     const userData = {
-      name: formData.name,
+      username: formData.username,
       email: formData.email,
       password: formData.password,
     };
@@ -36,13 +39,14 @@ function Signupcomponent() {
 
     // You can also redirect the user to another page or perform additional actions here
     alert("Registration successful");
-    console.log("ddd",userData);
+    console.log(userData);
 
-    axios.post('/setCredentials', {username: "sethu", password: "password"})
-    .then(res => console.log(res))
-    .catch(err => console.error(err));
-
+    // Example: Sending data to the server
+    axios.post('/setCredentials', userData)
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
   };
+
   return (
     <div>
       <section class="h-100 h-custom">
@@ -60,60 +64,64 @@ function Signupcomponent() {
                     Create an account
                   </h3>
 
-                  <form class="px-md-2" onSubmit={(e) => handleSubmit(e)}>
+                  <form class="px-md-2" onSubmit={handleSubmit}>
                     <div class="form-outline mb-4">
-                      <label class="form-label" for="form3Example1q">
+                      <label class="form-label" htmlFor="name">
                         Name
                       </label>
                       <input
                         type="text"
-                        id="form3Example1q"
+                        id="username"
                         class="form-control"
                         onChange={handleChange}
+                        value={formData.username}
                       />
                     </div>
 
                     <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                       <div class="col-12">
-                        <label class="form-label" for="form3Example1w">
+                        <label class="form-label" htmlFor="email">
                           Email
                         </label>
                         <div class="form-outline">
                           <input
                             type="email"
-                            id="form3Example1w"
+                            id="email"
                             class="form-control"
                             onChange={handleChange}
+                            value={formData.email}
                           />
                         </div>
                       </div>
                     </div>
                     <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                       <div class="col-12">
-                        <label class="form-label" for="form3Example1w">
+                        <label class="form-label" htmlFor="password">
                           Create Password
                         </label>
                         <div class="form-outline">
                           <input
                             type="password"
-                            id="form3Example1w"
+                            id="password"
                             class="form-control"
                             onChange={handleChange}
+                            value={formData.password}
                           />
                         </div>
                       </div>
                     </div>
                     <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                       <div class="col-12">
-                        <label class="form-label" for="form3Example1w">
+                        <label class="form-label" htmlFor="confirmPassword">
                           Confirm Password
                         </label>
                         <div class="form-outline">
                           <input
                             type="password"
-                            id="form3Example1w"
+                            id="confirmPassword"
                             class="form-control"
                             onChange={handleChange}
+                            value={formData.confirmPassword}
                           />
                         </div>
                       </div>
@@ -126,14 +134,14 @@ function Signupcomponent() {
                       </div>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="password" className="form-label">
-                          Already have an account?
-                          <span onClick={() => navigate("/login")}>
-                            {" "}
-                            Signup
-                          </span>
-                        </label>
-                      </div>
+                      <label htmlFor="password" className="form-label">
+                        Already have an account?
+                        <span onClick={() => navigate("/login")}>
+                          {" "}
+                          Login
+                        </span>
+                      </label>
+                    </div>
                   </form>
                 </div>
               </div>

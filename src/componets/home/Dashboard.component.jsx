@@ -5,7 +5,6 @@ function Dashboardcomponent() {
   return (
     <div>
         <Sidebarcomponent />
-
     </div>
   )
 }
