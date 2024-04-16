@@ -1,39 +1,121 @@
 import React from "react";
+import mango from "../../images/mango.jpg";
+import tomato from "../../images/tomato.jpg";
+import apricoat from "../../images/apricoat.jpg";
 import { FaRupeeSign } from "react-icons/fa";
-import fruitbox from "../../images/fruitbox.jpg"
+import { FaLock } from "react-icons/fa";
+import Button from "react-bootstrap/Button";
+
 function Bestsellercomponent() {
   return (
     <div>
-      <div class="container-fluid banner my-5 banner-main">
-        <div class="container py-5">
-          <div class="row g-4 align-items-center">
-            <div class="col-lg-6">
-              <div class="py-4">
-                <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
-                <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
-                <p class="mb-4 text-dark">
-                  The generated Lorem Ipsum is therefore always free from
-                  repetition injected humour, or non-characteristic words etc.
-                </p>
-                <a
-                  href="#"
-                  class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5"
-                >
-                  BUY
-                </a>
+      <div class="container py-5">
+        <div class="text-center mx-auto mb-5">
+          <h1 class="display-4">Bestseller Products</h1>
+          <p>
+            Latin words, combined with a handful of model sentence structures,
+            to generate Lorem Ipsum which looks reasonable.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6 col-xl-4">
+            <div class="p-4 rounded bg-light">
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <img
+                    src={mango}
+                    class="img-fluid rounded-circle w-100"
+                    alt=""
+                  />
+                </div>
+                <div class="col-6">
+                  <h4>Organic Tomato</h4>
+                  <div class="d-flex my-3">
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="mb-3">
+                    <FaRupeeSign />
+                    100{" "}
+                  </h4>
+                  <Button variant="primary" className="cart-btn">
+                    {" "}
+                    <span className="pe-2">
+                      <FaLock />
+                    </span>
+                    Add to Cart
+                  </Button>{" "}
+                </div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="position-relative">
-                <img src={fruitbox} class="img-fluid w-100 rounded" alt=""/>
-                <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute">
-                  <h1>1</h1>
-                  <div class="d-flex flex-column">
-                    <span class="h2 mb-0">
-                      50 <FaRupeeSign />
-                    </span>
-                    <span class="h4 text-muted mb-0">kg</span>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="p-4 rounded bg-light">
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <img
+                    src={mango}
+                    class="img-fluid rounded-circle w-100"
+                    alt=""
+                  />
+                </div>
+                <div class="col-6">
+                  <h4>Organic Tomato</h4>
+                  <div class="d-flex my-3">
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star"></i>
                   </div>
+                  <h4 class="mb-3">
+                    <FaRupeeSign />
+                    100{" "}
+                  </h4>
+                  <Button variant="primary" className="cart-btn">
+                    {" "}
+                    <span className="pe-2">
+                      <FaLock />
+                    </span>
+                    Add to Cart
+                  </Button>{" "}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="p-4 rounded bg-light">
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <img
+                    src={mango}
+                    class="img-fluid rounded-circle w-100"
+                    alt=""
+                  />
+                </div>
+                <div class="col-6">
+                  <h4>Organic Tomato</h4>
+                  <div class="d-flex my-3">
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star text-primary"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="mb-3">
+                    <FaRupeeSign />
+                    100{" "}
+                  </h4>
+                  <Button variant="primary" className="cart-btn">
+                    {" "}
+                    <span className="pe-2">
+                      <FaLock />
+                    </span>
+                    Add to Cart
+                  </Button>{" "}
                 </div>
               </div>
             </div>

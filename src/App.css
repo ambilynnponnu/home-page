@@ -102,7 +102,7 @@ body {
 }
 .img-fruit {
 }
-.cart-text{
+.cart-text {
   font-weight: 400px;
 }
 /* Custom CSS for responsiveness */
@@ -110,11 +110,11 @@ body {
   .navbar-home .navbar-brand {
     margin-right: auto;
   }
-  
+
   .navbar-home .navbar-nav {
     flex-direction: column;
   }
-  
+
   .navbar-home .navbar-nav .nav-link {
     padding: 0.5rem 1rem;
     text-align: center;
@@ -126,6 +126,28 @@ body {
     margin-top: 20px; /* Adjust margin as needed */
   }
 }
-.banner-main{
+.banner-main {
   background-color: rgb(54, 131, 219);
+}
+.signup-link {
+  cursor: pointer;
+}
+.signup-link:hover,
+.login-link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+.footer-card {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 9%,
+    rgba(233, 204, 232, 1) 56%
+  );
+}
+.subscribe-btn{
+  border-radius: 50%;
+  background-color: black;
+  color: #fff;
 }

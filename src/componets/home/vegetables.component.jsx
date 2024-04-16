@@ -6,32 +6,25 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import fruit from "../../images/stroberry.jpg";
 import { FaLock } from "react-icons/fa";
-import mango from "../../images/mango.jpg";
-import kiwi from "../../images/kiwi2.jpg"
-import pomgrane from "../../images/Pomegranate.jpeg"
-import greenapple from "../../images/green-apple.jpg"
-import orange from "../../images/orange1.jpg"
-import water from "../../images/water.jpeg"
-
-import apricoat from "../../images/apricoat.jpg";
+import coconut from "../../images/COCONUT.jpg";
+import tomato from "../../images/tomato.jpg";
 import { FaRupeeSign } from "react-icons/fa";
-function ProductsComponent() {
+import beans from "../../images/download.jpeg"
+import cabbage from "../../images/Cabbage-2.jpeg"
+import carrot from "../../images/carrot-img.jpg"
+import img1 from "../../images/beetroot-img.jpg"
+import img2 from "../../images/potato.jpg"
+import img3 from "../../images/drumstick.jpg"
+
+
+function Vegetablescomponent() {
   return (
     <div>
       <div className="p-4 d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
         <div className="mb-3 mb-lg-0">
-          <h className="sub-Head p-2">Our Natural Fruits</h>
-        </div>
-        <div>
-          <Button className="all-product me-2 mb-2 mb-lg-0">
-            All Products
-          </Button>{" "}
-          <Button className="all-product me-2 mb-2 mb-lg-0">Fruits</Button>{" "}
-          <Button className="all-product me-2 mb-2 mb-lg-0">Vegetables</Button>{" "}
-          <Button className="all-product mb-2 mb-lg-0">Meat</Button>{" "}
+          <h className="sub-Head p-2">Our Natural Vegetables</h>
         </div>
       </div>
-
       <div>
         <Container>
           <Row className="mb-4">
@@ -47,7 +40,7 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={fruit}
+                  src={img1}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
@@ -85,7 +78,7 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={mango}
+                  src={carrot}
                   className="img-fruit rounded-top"
                 />
                 <Card.Body>
@@ -123,7 +116,7 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={apricoat}
+                  src={cabbage}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
@@ -161,11 +154,11 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={orange}
+                  src={tomato}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
-                  <h4 className="d-flex justify-content-center">Orange</h4>
+                  <h4 className="d-flex justify-content-center">Tomato</h4>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -202,11 +195,11 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={greenapple}
+                  src={beans}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
-                  <h4 className="d-flex justify-content-center">Green Apple</h4>
+                  <h4 className="d-flex justify-content-center">Beans</h4>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -240,11 +233,11 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={pomgrane}
+                  src={coconut}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
-                  <h4 className="d-flex justify-content-center">Pomgrane</h4>
+                  <h4 className="d-flex justify-content-center">Coconut</h4>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -278,11 +271,11 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={water}
+                  src={tomato}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
-                  <h4 className="d-flex justify-content-center">WaterMelon</h4>
+                  <h4 className="d-flex justify-content-center">Tomato</h4>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -316,11 +309,11 @@ function ProductsComponent() {
               >
                 <Card.Img
                   variant="top"
-                  src={kiwi}
+                  src={img2}
                   className="img-fluid img-fruit rounded-top w-100"
                 />
                 <Card.Body>
-                  <h4 className="d-flex justify-content-center">Kiwi</h4>
+                  <h4 className="d-flex justify-content-center">Tomato</h4>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -349,4 +342,4 @@ function ProductsComponent() {
   );
 }
 
-export default ProductsComponent;
+export default Vegetablescomponent;

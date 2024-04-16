@@ -5,6 +5,8 @@ import Login from "./componets/home/Login.component";
 import Home from "./componets/home/home.component";
 import Signupcomponent from "./componets/home/Signup.component";
 import Sidebarcomponent from "./componets/home/Sidebar.component";
+import ProductsComponent from "./componets/home/Products.component";
+import Vegetablescomponent from "./componets/home/vegetables.component";
 function Navigation() {
   return (
     <div>
@@ -15,6 +17,9 @@ function Navigation() {
           <Route path="/home" element={<Home />} />
           <Route path="/signup" element={<Signupcomponent />} />
           <Route path="/sidebar" element={<Sidebarcomponent />} />
+          <Route path="/fruits" element={<ProductsComponent />} />
+          <Route path="/vegetables" element={<Vegetablescomponent />} />
+
         </Routes>
       </Router>
     </div>

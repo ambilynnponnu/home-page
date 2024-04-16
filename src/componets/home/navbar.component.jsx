@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-
+import { FaShoppingCart } from "react-icons/fa";
 function Navbar() {
   const navigate = useNavigate();
   return (
@@ -27,14 +27,22 @@ function Navbar() {
             id="navbarNavAltMarkup"
           >
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">
-                Home
+              <a class="nav-link" href="/fruits">
+                Fruits
               </a>
-              <a class="nav-link" href="/signup">
+              <a class="nav-link" href="/vegetables">
+                Vegetables
+              </a>
+            </div>
+            <div class="navbar-nav">
+              {/* <a class="nav-link" href="/signup">
                 Signup
-              </a>
+              </a> */}
               <a class="nav-link" href="/login">
                 Login
+              </a>
+              <a class="nav-link">
+                <FaShoppingCart />
               </a>
             </div>
           </div>
