@@ -68,14 +68,14 @@ function Login() {
                         />
                       </div>
                       <div className="d-grid gap-2">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-primary ">
                           Login
                         </button>
                       </div>
                       <div className="mb-3">
                         <label htmlFor="password" className="form-label">
                           Don't have an account?
-                          <span onClick={() => navigate("/signup")}>
+                          <span onClick={() => navigate("/signup")} className='signup-link'>
                             {" "}
                             Signup
                           </span>

@@ -136,7 +136,7 @@ function Signupcomponent() {
                     <div className="mb-3">
                       <label htmlFor="password" className="form-label">
                         Already have an account?
-                        <span onClick={() => navigate("/login")}>
+                        <span onClick={() => navigate("/login")} className="login-link">
                           {" "}
                           Login
                         </span>
