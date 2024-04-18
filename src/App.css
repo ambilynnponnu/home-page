@@ -43,8 +43,7 @@ body {
     color: #fff !important;
   }
 }
-.navbar-main {
-}
+
 .bg-img {
   position: relative;
   /* Set the desired background image */
@@ -101,6 +100,8 @@ body {
   color: greenyellow !important;
 }
 .img-fruit {
+  width: 250px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
 }
 .cart-text {
   font-weight: 400px;
@@ -151,3 +152,4 @@ body {
   background-color: black;
   color: #fff;
 }
+

@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { FaLock, FaRupeeSign } from "react-icons/fa";
-import axios from 'axios';
+import {  FaRupeeSign } from "react-icons/fa";
+import axios from "axios";
 
 function Vegetablescomponent() {
-  const [vegetables, setVegetables] = useState([]);
+  const [products, setProducts] = useState([]);
 
+
+
+
+  
   useEffect(() => {
-    // fetchVegetables();
-    handleSubmit();
-  }, []);
-
-  const handleSubmit = (event) => {
-    // event.preventDefault();
-    
-
-    axios.post('/vegetables')
-      .then(res => {
+    axios
+      .get("/products")
+      .then((res) => {
         console.log(res);
-        // Redirect or handle success as needed
+        setProducts(res.data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         // Handle error as needed
       });
-  }
+  }, []);
 
+  // const handleSubmit = (event) => {
+  //   // event.preventDefault();
 
-
- 
+  // }
 
   return (
     <div>
@@ -42,45 +35,40 @@ function Vegetablescomponent() {
         </div>
       </div>
       <div>
-        <Container>
-          <Row className="mb-4">
-            {vegetables.map((vegetable, index) => (
-              <Col key={index}>
-                <Card
-                  style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                  onMouseOver={(e) => {
-                    e.target.style.transform = "scale(1.1)";
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.transform = "scale(1)";
-                  }}
-                >
-                  <Card.Img
-                    variant="top"
-                    src={vegetable.image}
-                    className="img-fluid img-fruit rounded-top w-100"
-                  />
-                  <Card.Body>
-                    <h4 className="d-flex justify-content-center">{vegetable.name}</h4>
-                    <Card.Text>{vegetable.description}</Card.Text>
+        <div className="container">
+          <div className="row mb-4">
+            {products.map((vegetable, index) => (
+              <div className="col-4" key={index}>
+                <div className="card veg-card mb-4">
+                  <div className="d-flex justify-content-center align-items-center">
+                    <img
+                      src={vegetable.image}
+                      className=" img-fruit"
+                      alt="..."
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title"> {vegetable.name}</h5>
+                    {/* <p className="card-text">{vegetable.description}</p> */}
                     <p>
                       <strong>
                         <FaRupeeSign />
                         {vegetable.price} / kg
                       </strong>
                     </p>
-                    <Button variant="primary" className="cart-btn">
+                    <p>Free Delivery</p>
+                    {/* <a href="#" class="btn btn-primary">
                       <span className="pe-2">
                         <FaLock />
                       </span>
                       Add to Cart
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
+                    </a> */}
+                  </div>
+                </div>
+              </div>
             ))}
-          </Row>
-        </Container>
+          </div>
+        </div>
       </div>
     </div>
   );
