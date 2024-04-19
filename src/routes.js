@@ -7,6 +7,7 @@ import Signupcomponent from "./componets/home/Signup.component";
 import Sidebarcomponent from "./componets/home/Sidebar.component";
 import ProductsComponent from "./componets/home/Products.component";
 import Vegetablescomponent from "./componets/home/vegetables.component";
+import Vegetablesdeatilcomponent from "./componets/home/vegetablesdeatils.component";
 function Navigation() {
   return (
     <div>
@@ -19,7 +20,7 @@ function Navigation() {
           <Route path="/sidebar" element={<Sidebarcomponent />} />
           <Route path="/fruits" element={<ProductsComponent />} />
           <Route path="/vegetables" element={<Vegetablescomponent />} />
-
+          <Route path="/vegetabledeatils" component={<Vegetablesdeatilcomponent />} /> {/* Route for vegetable details */}
         </Routes>
       </Router>
     </div>

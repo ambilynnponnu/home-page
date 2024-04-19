@@ -33,6 +33,7 @@ function Signupcomponent() {
       username: formData.username,
       email: formData.email,
       password: formData.password,
+      confirmPassword: formData.confirmPassword
     };
 
     localStorage.setItem("userData", JSON.stringify(userData));
@@ -41,11 +42,23 @@ function Signupcomponent() {
     alert("Registration successful");
     console.log(userData);
 
-    // Example: Sending data to the server
+    // Example: Sending data to the server to set credentials
     axios.post('/setCredentials', userData)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        
+        // If setting credentials is successful, send email
+        axios.post('/sendEmail', {
+          to: formData.email,
+          subject: "Welcome to Fruit Mart",
+          text: "Thank you for registering with Fruit Mart. We look forward to serving you!",
+        })
+        .then(emailRes => console.log(emailRes))
+        .catch(emailErr => console.error(emailErr));
+      })
       .catch(err => console.error(err));
   };
+
 
   return (
     <div>

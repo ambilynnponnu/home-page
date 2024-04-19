@@ -4,7 +4,7 @@ function Footercomponent() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-12">
+        <div className="col-12 mb-5">
           <div class="card footer-card d-flex justify-content-center">
             <div class="card-body">
               <h2 class="card-title d-flex justify-content-center">
