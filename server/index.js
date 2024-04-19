@@ -1,7 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const nodemailer = require("nodemailer");
 
+const app = express();
+const jsonParserForEmail = bodyParser.json();
 const readline = require("readline");
 const fs = require("fs");
 var jsonParser = bodyParser.json();
@@ -14,6 +17,48 @@ module.exports = ({ httpPort = 3000 }) => {
   // Define a route for serving the index.html file
   app.get("/api/hello", (req, res) => {
     res.send({ message: "Hello world!" });
+  });
+
+  app.post("/sendEmail", jsonParserForEmail, (req, res) => {
+    // Extract email details from request body
+    const { to, subject, text } = req.body;
+
+    // Create a Nodemailer transporter
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.USER,
+        pass: process.env.APP_PASSWORD,
+      },
+    });
+
+    // Define email options
+    const mailOptions = {
+      // send mail with defined transport object
+      from: {
+        name: "Fruit Mart",
+        address: process.env.USER,
+      },
+      to: "ambily2499@gmail.com, ", // list of receivers
+      subject: "Hello ✔", // Subject line
+      text: "Hello world?", // plain text body
+      html: "<b>Hello world?</b>", // html body
+    };
+
+    // Send email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error("Error occurred while sending email:", error);
+        res.status(500).send({
+          message: "Failed to send email",
+        });
+      } else {
+        console.log("Email sent:", info.response);
+        res.status(200).send({
+          message: "Email sent successfully",
+        });
+      }
+    });
   });
 
   app.post("/setCredentials", jsonParserForFeedback, (req, res) => {
@@ -49,7 +94,7 @@ module.exports = ({ httpPort = 3000 }) => {
         rl.close();
         res.status(404);
         res.send({
-          error: `Error reading file:, ${err}`,
+          error: `Error reading file: ${err}`,
         });
         return;
       }
@@ -60,26 +105,30 @@ module.exports = ({ httpPort = 3000 }) => {
       // Check each line for the given username/password combination
       let credentialsMatch = false;
       lines.forEach((line) => {
-        const [savedUsername, savedPassword] = line.split(":");
+        const [savedUsername, savedPassword, savedEmail] = line.split(":");
         if (
           savedUsername === req.body.username &&
-          savedPassword === req.body.password
+          savedPassword === req.body.password &&
+          savedEmail === req.body.email &&
+          req.body.password === req.body.confirmPassword
         ) {
           credentialsMatch = true;
         }
       });
       rl.close();
       if (credentialsMatch) {
-        console.log("Username/password match.");
+        console.log("Username/password/email match.");
         res.status(200);
         res.send({
           message: `Logged in successfully`,
         });
       } else {
-        console.log("Invalid username/password combination.");
+        console.log(
+          "Invalid username/password/email combination or passwords don't match."
+        );
         res.status(200);
         res.send({
-          message: `Invalid username/password combination.`,
+          message: `Invalid username/password/email combination or passwords don't match.`,
         });
       }
     });
@@ -139,6 +188,7 @@ module.exports = ({ httpPort = 3000 }) => {
     // Send the list of vegetables as a JSON response
     res.json(vegetables);
   });
+
   // Start the server
   app.listen(httpPort, () => {
     console.log(`Server is running on port ${httpPort}`);
