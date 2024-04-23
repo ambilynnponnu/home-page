@@ -15,9 +15,11 @@ import water from "../../images/water.jpeg"
 
 import apricoat from "../../images/apricoat.jpg";
 import { FaRupeeSign } from "react-icons/fa";
+import Navbar from "./navbar.component";
 function ProductsComponent() {
   return (
     <div>
+      <Navbar />
       <div className="p-4 d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
         <div className="mb-3 mb-lg-0">
           <h className="sub-Head p-2">Our Natural Fruits</h>

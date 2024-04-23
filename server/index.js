@@ -27,8 +27,8 @@ module.exports = ({ httpPort = 3000 }) => {
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.USER,
-        pass: process.env.APP_PASSWORD,
+        user:" ambily2499@gmail.com",
+        pass:"fzez neyn godg empd",
       },
     });
 
@@ -37,9 +37,9 @@ module.exports = ({ httpPort = 3000 }) => {
       // send mail with defined transport object
       from: {
         name: "Fruit Mart",
-        address: process.env.USER,
+        address: "ambily2499@gmail.com",
       },
-      to: "ambily2499@gmail.com, ", // list of receivers
+      to: "ambily2499@gmail.com,midhunrajb6@gmail.com ", // list of receivers
       subject: "Hello ✔", // Subject line
       text: "Hello world?", // plain text body
       html: "<b>Hello world?</b>", // html body

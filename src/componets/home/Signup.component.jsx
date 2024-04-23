@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./navbar.component";
 
 function Signupcomponent() {
   const navigate = useNavigate();
@@ -62,7 +63,8 @@ function Signupcomponent() {
 
   return (
     <div>
-      <section class="h-100 h-custom">
+      <Navbar/>
+      <section class="h-100 h-custom mt-5">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-8 col-xl-6">
