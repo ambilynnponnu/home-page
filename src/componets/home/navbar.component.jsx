@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
 import axios from "axios";
 function Navbar() {
   const navigate = useNavigate();
@@ -49,6 +50,20 @@ function Navbar() {
             class="collapse navbar-collapse navbar-main justify-content-end"
             id="navbarNavAltMarkup"
           >
+            <div>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">
+                  <CiSearch />
+                </span>
+                <input
+                  type="text"
+                  className="form-control me-5"
+                  placeholder="Search"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+            </div>
             <div class="navbar-nav">
               <a class="nav-link" href="/fruits">
                 Fruits

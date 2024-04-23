@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {  FaRupeeSign } from "react-icons/fa";
 import axios from "axios";
+import Navbar from "./navbar.component";
 
 function Vegetablescomponent() {
   const [products, setProducts] = useState([]);
@@ -29,6 +30,7 @@ function Vegetablescomponent() {
 
   return (
     <div>
+      <Navbar />
       <div className="p-4 d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
         <div className="mb-3 mb-lg-0">
           <h className="sub-Head p-2">Our Natural Vegetables</h>
