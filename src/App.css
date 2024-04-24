@@ -97,7 +97,7 @@ body {
   border-radius: 50px !important;
   border-color: rgb(227, 227, 132);
   outline: none;
-  color: greenyellow !important;
+  color: rgb(33, 54, 2) !important;
 }
 .img-fruit {
   width: 250px; /* Adjust as needed */
