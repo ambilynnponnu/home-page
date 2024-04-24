@@ -31,6 +31,15 @@ const products = [
     category: "vegetable",
   },
   {
+    name: "potato",
+    image:
+      "https://www.shutterstock.com/image-photo/top-down-view-many-organic-freshly-2360416693",
+    quantity: "One Unit",
+    id: 7,
+    price: 50,
+    category: "vegetable",
+  },
+  {
     name: "Banana",
     image:
       "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fbanana&psig=AOvVaw2xYxk1z-I6CMP9UYTNligW&ust=1713527629518000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDyp4Lay4UDFQAAAAAdAAAAABAE",
@@ -88,7 +97,7 @@ module.exports = ({ httpPort = 3000 }) => {
         name: "Fruit Mart",
         address: "ambily2499@gmail.com",
       },
-      to: "ambily2499@gmail.com,midhunrajb6@gmail.com ", // list of receivers
+      to: "ambily2499@gmail.com", // list of receivers
       subject: "Hello ✔", // Subject line
       text: "Hello world?", // plain text body
       html: "<b>Hello world?</b>", // html body
