@@ -12,7 +12,6 @@ function Navbar() {
     axios
       .get("/products")
       .then((res) => {
-        console.log(res);
         setProducts(res.data);
       })
       .catch((err) => {

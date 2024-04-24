@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import {  FaRupeeSign } from "react-icons/fa";
+import {  FaLock, FaRupeeSign } from "react-icons/fa";
 import axios from "axios";
 import Navbar from "./navbar.component";
+import { useNavigate } from "react-router-dom";
 
 function Vegetablescomponent() {
   const [products, setProducts] = useState([]);
 
 
+  const navigate = useNavigate();
 
 
   
@@ -14,7 +16,6 @@ function Vegetablescomponent() {
     axios
       .get("/products")
       .then((res) => {
-        console.log(res);
         setProducts(res.data);
       })
       .catch((err) => {
@@ -59,13 +60,16 @@ function Vegetablescomponent() {
                       </strong>
                     </p>
                     <p>Free Delivery</p>
-                    {/* <a href="#" class="btn btn-primary">
-                      <span className="pe-2">
+                    <a  class="btn btn-primary" onClick={() => navigate("/addtocart")}>
+                      <span className="pe-2"
+                     >
                         <FaLock />
                       </span>
                       Add to Cart
-                    </a> */}
+                    </a>
                   </div>
+
+
                 </div>
               </div>
             ))}
