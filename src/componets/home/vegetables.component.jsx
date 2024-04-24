@@ -13,8 +13,14 @@ function Vegetablescomponent() {
 
   
   useEffect(() => {
+    const filter = {
+      category: "vegetable"
+    };
+    
+    // Convert the filter object to a query string
+    const queryString = new URLSearchParams(filter).toString();
     axios
-      .get("/products")
+      .get(`/products?${queryString}`)
       .then((res) => {
         setProducts(res.data);
       })
