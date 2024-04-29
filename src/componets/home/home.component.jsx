@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import img3 from "../../images/veg-img2.jpg";
 import img4 from "../../images/veg-img6.jpg";
 import img1 from "../../images/veg-img1.jpg";
-import img2 from "../../images/veg-img3.jpg";
 
 import { Carousel } from "react-bootstrap";
 
