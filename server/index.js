@@ -199,6 +199,99 @@ module.exports = ({ httpPort = 3000 }) => {
     res.json(result);
   });
 
+
+
+
+
+// Route to add a product to the cart
+app.post('/add-to-cart', (req, res) => {
+  const { productId, quantity } = req.body;
+
+  // Validate input
+  if (!productId || !quantity) {
+    return res.status(400).json({ error: 'Both productId and quantity are required.' });
+  }
+
+  // Check if the product already exists in the cart
+  fs.readFile('cart.txt', 'utf8', (err, data) => {
+    if (err && err.code !== 'ENOENT') {
+      console.error('Error reading cart.txt:', err);
+      return res.status(500).json({ error: 'Internal server error.' });
+    }
+    let cartItems = [];
+    if (data) {
+      // If cart.txt exists, parse its content
+      cartItems = data.split('\n').map(item => {
+        const [existingProductId, existingQuantity] = item.split(',');
+        return { productId: existingProductId, quantity: parseInt(existingQuantity) };
+      });
+    }
+
+    // Check if the product is already in the cart
+    const existingItemIndex = cartItems.findIndex(item => item.productId === productId);
+    if (existingItemIndex !== -1) {
+      // Update quantity if the product is already in the cart
+      cartItems[existingItemIndex].quantity += parseInt(quantity);
+    } else {
+      // Add new item to the cart
+      cartItems.push({ productId, quantity: parseInt(quantity) });
+    }
+
+    // Write updated cart data back to cart.txt
+    const updatedCartData = cartItems.map(item => `${item.productId},${item.quantity}`).join('\n');
+    fs.writeFile('cart.txt', updatedCartData, (err) => {
+      if (err) {
+        console.error('Error writing to cart.txt:', err);
+        return res.status(500).json({ error: 'Internal server error.' });
+      }
+      res.status(200).json({ message: 'Product added to cart successfully.' });
+    });
+  });
+});
+
+// Route to remove a product from the cart
+app.post('/remove-from-cart', (req, res) => {
+  const { productId } = req.body;
+
+  // Validate input
+  if (!productId) {
+    return res.status(400).json({ error: 'productId is required.' });
+  }
+
+  // Read the cart.txt file
+  fs.readFile('cart.txt', 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading cart.txt:', err);
+      return res.status(500).json({ error: 'Internal server error.' });
+    }
+
+    // Parse the cart data
+    const cartItems = data.split('\n').map(item => {
+      const [existingProductId, existingQuantity] = item.split(',');
+      return { productId: existingProductId, quantity: parseInt(existingQuantity) };
+    });
+
+    // Find the index of the product in the cart
+    const productIndex = cartItems.findIndex(item => item.productId === productId);
+    if (productIndex !== -1) {
+      // Remove the product from the cart
+      cartItems.splice(productIndex, 1);
+
+      // Write the updated cart data back to cart.txt
+      const updatedCartData = cartItems.map(item => `${item.productId},${item.quantity}`).join('\n');
+      fs.writeFile('cart.txt', updatedCartData, (err) => {
+        if (err) {
+          console.error('Error writing to cart.txt:', err);
+          return res.status(500).json({ error: 'Internal server error.' });
+        }
+        res.status(200).json({ message: 'Product removed from cart successfully.' });
+      });
+    } else {
+      res.status(404).json({ error: 'Product not found in the cart.' });
+    }
+  });
+});
+
   // Start the server
   app.listen(httpPort, () => {
     console.log(`Server is running on port ${httpPort}`);
