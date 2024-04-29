@@ -1,22 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import fruit from "../../images/stroberry.jpg";
 import { FaLock } from "react-icons/fa";
-import mango from "../../images/mango.jpg";
-import kiwi from "../../images/kiwi2.jpg"
-import pomgrane from "../../images/Pomegranate.jpeg"
-import greenapple from "../../images/green-apple.jpg"
-import orange from "../../images/orange1.jpg"
-import water from "../../images/water.jpeg"
-
-import apricoat from "../../images/apricoat.jpg";
 import { FaRupeeSign } from "react-icons/fa";
 import Navbar from "./navbar.component";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 function ProductsComponent() {
+  const [products, setProducts] = useState([]);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const filter = {
+      category: "Fruit",
+    };
+
+    // Convert the filter object to a query string
+    const queryString = new URLSearchParams(filter).toString();
+    axios
+      .get(`/products?${queryString}`)
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+        // Handle error as needed
+      });
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -33,319 +44,44 @@ function ProductsComponent() {
           <Button className="all-product mb-2 mb-lg-0">Meat</Button>{" "}
         </div>
       </div>
-
       <div>
-        <Container>
-          <Row className="mb-4">
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={fruit}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Stroberry</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={mango}
-                  className="img-fruit rounded-top"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Mango</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={apricoat}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Apricoat</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={orange}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Orange</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-
-          <Row className="mt-4">
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={greenapple}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Green Apple</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={pomgrane}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Pomgrane</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={water}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">WaterMelon</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                style={{ overflow: "hidden", transition: "transform 0.3s" }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = "scale(1)";
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={kiwi}
-                  className="img-fluid img-fruit rounded-top w-100"
-                />
-                <Card.Body>
-                  <h4 className="d-flex justify-content-center">Kiwi</h4>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <p>
-                    <strong>
-                      <FaRupeeSign />
-                      300 / kg
-                    </strong>
-                  </p>
-
-                  <Button variant="primary" className="cart-btn">
-                    {" "}
-                    <span className="pe-2">
-                      <FaLock />
-                    </span>
-                    Add to Cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+        <div className="container">
+          <div className="row mb-4">
+            {products.map((vegetable, index) => (
+              <div className="col-4" key={index}>
+                <div className="card veg-card mb-4">
+                  <div className="d-flex justify-content-center align-items-center">
+                    <img
+                      src={vegetable.image}
+                      className=" img-fruit"
+                      alt="..."
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title"> {vegetable.name}</h5>
+                    {/* <p className="card-text">{vegetable.description}</p> */}
+                    <p>
+                      <strong>
+                        <FaRupeeSign />
+                        {vegetable.price} / kg
+                      </strong>
+                    </p>
+                    <p>Free Delivery</p>
+                    <a
+                      class="btn btn-primary"
+                      onClick={() => navigate("/addtocart")}
+                    >
+                      <span className="pe-2">
+                        <FaLock />
+                      </span>
+                      Add to Cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
