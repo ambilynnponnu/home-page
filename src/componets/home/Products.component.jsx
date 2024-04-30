@@ -67,7 +67,7 @@ function ProductsComponent() {
                       </strong>
                     </p>
                     <p>Free Delivery</p>
-                    <a
+                    {/* <a
                       class="btn btn-primary"
                       onClick={() => navigate("/addtocart")}
                     >
@@ -75,7 +75,7 @@ function ProductsComponent() {
                         <FaLock />
                       </span>
                       Add to Cart
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

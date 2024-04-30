@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./navbar.component";
 import { FiShare } from "react-icons/fi";
 import { FiMoreHorizontal } from "react-icons/fi";
-function AddtoCartcomponent() {
+function ProductDetailscomponent() {
   return (
     <div className="container">
       <div>
@@ -75,4 +75,4 @@ function AddtoCartcomponent() {
   );
 }
 
-export default AddtoCartcomponent;
+export default ProductDetailscomponent;
