@@ -8,7 +8,7 @@ import Sidebarcomponent from "./componets/home/Sidebar.component";
 import ProductsComponent from "./componets/home/Products.component";
 import Vegetablescomponent from "./componets/home/vegetables.component";
 import Vegetablesdeatilcomponent from "./componets/home/vegetablesdeatils.component";
-import AddtoCartcomponent from "./componets/home/AddtoCart.component";
+import ProductDetailscomponent from "./componets/home/ProductDetails.component";
 function Navigation() {
   return (
     <div>
@@ -22,8 +22,7 @@ function Navigation() {
           <Route path="/fruits" element={<ProductsComponent />} />
           <Route path="/vegetables" element={<Vegetablescomponent />} />
           <Route path="/vegetabledeatils" component={<Vegetablesdeatilcomponent />} /> 
-          <Route path="/addtocart" element={<AddtoCartcomponent />} /> 
-
+          <Route path="/detailsPage" element={<ProductDetailscomponent />} /> 
         </Routes>
       </Router>
     </div>

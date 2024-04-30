@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function Vegetablescomponent() {
   const [products, setProducts] = useState([]);
+  const [productsDeatails, setProductsDeatails] = useState([]);
 
 
   const navigate = useNavigate();
@@ -34,7 +35,27 @@ function Vegetablescomponent() {
   //   // event.preventDefault();
 
   // }
-
+  const handleSubmit = (productId, quantity) => {
+    const data = {
+      id: productId,
+    };
+  
+    axios
+      .post("/productDetails", data)
+      .then((res) => {
+        console.log(res);
+        setProductsDeatails(res)
+        navigate("/detailsPage");
+        // Redirect or handle success as needed
+      })
+      .catch((err) => {
+        console.error(err);
+        // Handle error as needed
+      });
+  };
+  
+  
+  
   return (
     <div>
       <Navbar />
@@ -48,7 +69,7 @@ function Vegetablescomponent() {
           <div className="row mb-4">
             {products.map((vegetable, index) => (
               <div className="col-4" key={index}>
-                <div className="card veg-card mb-4">
+                <div className="card veg-card mb-4"  onClick={() => handleSubmit(vegetable.id,)}>
                   <div className="d-flex justify-content-center align-items-center">
                     <img
                       src={vegetable.image}
@@ -66,13 +87,12 @@ function Vegetablescomponent() {
                       </strong>
                     </p>
                     <p>Free Delivery</p>
-                    <a  class="btn btn-primary" onClick={() => navigate("/addtocart")}>
-                      <span className="pe-2"
-                     >
+                    {/* <a  class="btn btn-primary" onClick={() => handleSubmit(vegetable.id,1)}>
+                      <span className="pe-2">
                         <FaLock />
                       </span>
                       Add to Cart
-                    </a>
+                    </a> */}
                   </div>
 
 
