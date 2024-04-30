@@ -22,7 +22,7 @@ function Navigation() {
           <Route path="/fruits" element={<ProductsComponent />} />
           <Route path="/vegetables" element={<Vegetablescomponent />} />
           <Route path="/vegetabledeatils" component={<Vegetablesdeatilcomponent />} /> 
-          <Route path="/detailsPage" element={<ProductDetailscomponent />} /> 
+          <Route path="/vegetables/detailsPage" element={<ProductDetailscomponent />} /> 
         </Routes>
       </Router>
     </div>

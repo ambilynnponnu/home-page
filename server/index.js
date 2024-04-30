@@ -35,8 +35,8 @@ const products = [
     image:
       "https://www.shutterstock.com/image-photo/top-down-view-many-organic-freshly-2360416693",
     quantity: "One Unit",
-    id: 7,
-    price: 50,
+    id: 11,
+    price: 70,
     category: "vegetable",
   },
   {
@@ -211,15 +211,16 @@ module.exports = ({ httpPort = 3000 }) => {
   app.get("/productDetails", (req, res) => {
     const { productId } = req.query;
 
-    const result = products.filter((prod) => {
-      if (productId && prod.id === productId) {
-        return true;
-      } else return false;
-    });
+    const result = [];
+    products.forEach(prod => {
+      if(productId && prod?.id == productId) {
+        result.push(prod)
+      }
+    })
 
     // Send the list of products as a JSON response
     res.json(result);
-  });
+  });
 
   // Route to add a product to the cart
   app.post("/add-to-cart", (req, res) => {

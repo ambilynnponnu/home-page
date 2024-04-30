@@ -3,10 +3,11 @@ import { FaLock, FaRupeeSign } from "react-icons/fa";
 import axios from "axios";
 import Navbar from "./navbar.component";
 import { useNavigate } from "react-router-dom";
+import ProductDetailscomponent from "./ProductDetails.component";
 
 function Vegetablescomponent() {
   const [products, setProducts] = useState([]);
-  const [productsDeatails, setProductsDeatails] = useState([]);
+  const [productsDetails, setProductsDetails] = useState([]);
 
   const navigate = useNavigate();
 
@@ -32,18 +33,18 @@ function Vegetablescomponent() {
   //   // event.preventDefault();
 
   // }
-  const handleSubmit = (productId, ) => {
+  const handleSubmit = (productId) => {
     const filter = {
       productId: productId,
     };
-  
+
     const queryString = new URLSearchParams(filter).toString();
     axios
       .get(`/productDetails?${queryString}`)
       .then((res) => {
         console.log(res);
-        setProductsDeatails(res);
-        navigate("/detailsPage");
+        setProductsDetails(res);
+        navigate("/vegetables/detailsPage");
         // Redirect or handle success as needed
       })
       .catch((err) => {
@@ -94,6 +95,9 @@ function Vegetablescomponent() {
                     </a> */}
                   </div>
                 </div>
+                {productsDetails.length > 0 && (
+                  <ProductDetailscomponent productsDetails={productsDetails} />
+                )}
               </div>
             ))}
           </div>
