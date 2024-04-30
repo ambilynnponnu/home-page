@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "./navbar.component";
 import { FiShare } from "react-icons/fi";
 import { FiMoreHorizontal } from "react-icons/fi";
-function ProductDetailscomponent() {
+function ProductDetailscomponent({ productsDetails }) {
+  console.log("eeeee",productsDetails)
   return (
     <div className="container">
       <div>
