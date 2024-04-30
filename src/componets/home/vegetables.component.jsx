@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  FaLock, FaRupeeSign } from "react-icons/fa";
+import { FaLock, FaRupeeSign } from "react-icons/fa";
 import axios from "axios";
 import Navbar from "./navbar.component";
 import { useNavigate } from "react-router-dom";
@@ -8,16 +8,13 @@ function Vegetablescomponent() {
   const [products, setProducts] = useState([]);
   const [productsDeatails, setProductsDeatails] = useState([]);
 
-
   const navigate = useNavigate();
 
-
-  
   useEffect(() => {
     const filter = {
-      category: "vegetable"
+      category: "vegetable",
     };
-    
+
     // Convert the filter object to a query string
     const queryString = new URLSearchParams(filter).toString();
     axios
@@ -35,16 +32,17 @@ function Vegetablescomponent() {
   //   // event.preventDefault();
 
   // }
-  const handleSubmit = (productId, quantity) => {
-    const data = {
-      id: productId,
+  const handleSubmit = (productId, ) => {
+    const filter = {
+      productId: productId,
     };
   
+    const queryString = new URLSearchParams(filter).toString();
     axios
-      .post("/productDetails", data)
+      .get(`/productDetails?${queryString}`)
       .then((res) => {
         console.log(res);
-        setProductsDeatails(res)
+        setProductsDeatails(res);
         navigate("/detailsPage");
         // Redirect or handle success as needed
       })
@@ -53,9 +51,7 @@ function Vegetablescomponent() {
         // Handle error as needed
       });
   };
-  
-  
-  
+
   return (
     <div>
       <Navbar />
@@ -69,7 +65,10 @@ function Vegetablescomponent() {
           <div className="row mb-4">
             {products.map((vegetable, index) => (
               <div className="col-4" key={index}>
-                <div className="card veg-card mb-4"  onClick={() => handleSubmit(vegetable.id,)}>
+                <div
+                  className="card veg-card mb-4"
+                  onClick={() => handleSubmit(vegetable.id)}
+                >
                   <div className="d-flex justify-content-center align-items-center">
                     <img
                       src={vegetable.image}
@@ -94,8 +93,6 @@ function Vegetablescomponent() {
                       Add to Cart
                     </a> */}
                   </div>
-
-
                 </div>
               </div>
             ))}
