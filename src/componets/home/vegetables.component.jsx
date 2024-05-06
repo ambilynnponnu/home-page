@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { FaLock, FaRupeeSign } from "react-icons/fa";
+import { FaRupeeSign } from "react-icons/fa";
 import axios from "axios";
 import Navbar from "./navbar.component";
 import { useNavigate } from "react-router-dom";
 import ProductDetailscomponent from "./ProductDetails.component";
 
-function Vegetablescomponent() {
+function Vegetablescomponent({ props }) {
   const [products, setProducts] = useState([]);
-  const [productsDetails, setProductsDetails] = useState([]);
+  const [Details, setDetails] = useState(false);
 
   const navigate = useNavigate();
 
@@ -29,21 +29,16 @@ function Vegetablescomponent() {
       });
   }, []);
 
-  // const handleSubmit = (event) => {
-  //   // event.preventDefault();
-
-  // }
   const handleSubmit = (productId) => {
     const filter = {
-      productId: productId,
+      productId: 7,
     };
 
     const queryString = new URLSearchParams(filter).toString();
     axios
       .get(`/productDetails?${queryString}`)
       .then((res) => {
-        console.log(res);
-        setProductsDetails(res);
+        // setProductsDetails(res.data);
         navigate("/vegetables/detailsPage");
         // Redirect or handle success as needed
       })
@@ -52,7 +47,7 @@ function Vegetablescomponent() {
         // Handle error as needed
       });
   };
-
+ 
   return (
     <div>
       <Navbar />
@@ -95,9 +90,15 @@ function Vegetablescomponent() {
                     </a> */}
                   </div>
                 </div>
-                {productsDetails.length > 0 && (
-                  <ProductDetailscomponent productsDetails={productsDetails} />
-                )}
+                {}
+                {/* Render ProductDetailscomponent here */}
+                {/* {!Details && (
+                  <div>
+                    <ProductDetailscomponent
+                      productsDetails={productsDetails}
+                    />
+                  </div>
+                )} */}
               </div>
             ))}
           </div>

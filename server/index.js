@@ -22,13 +22,16 @@ const products = [
     category: "vegetable",
   },
   {
-    name: "Capsicum",
+    name: "Green Capsicum 500g",
     image:
       "https://www.nicepng.com/png/detail/52-525615_green-bell-pepper-png-green-capsicum-png.png",
     quantity: "One Unit",
     id: 7,
-    price: 50,
+    price: "50.00( ₹22.50/250 g)",
     category: "vegetable",
+    description:"Green Capsicums come in different shapes and sizes to make it easy for you to add vibrant colour and sweet taste wherever you want to. Green Capsicums add a sweet taste and delicious flavour to your favourite dishes. You can cut them into wedges to eat fresh, dice them to mix into dishes, or leave them halved so you can stuff them and bake them. They can be roasted and peeled, stuffed and baked, added to soups and stews, or pickled like pimentos. So, go ahead, buy Green Capsicum 500 g online now!",
+    Disclaimer:"Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use"
+  
   },
   {
     name: "potato",

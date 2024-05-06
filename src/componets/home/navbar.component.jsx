@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import axios from "axios";
+import NavbarHeadercomponent from "./navbarHeader.component";
 function Navbar() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -88,6 +89,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      <NavbarHeadercomponent />
     </div>
   );
 }

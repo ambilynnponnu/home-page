@@ -93,11 +93,11 @@ body {
   outline: none;
 }
 .cart-btn {
-  background-color: #fff !important;
+  background-color: #133ba0 !important;
   border-radius: 50px !important;
   border-color: rgb(227, 227, 132);
   outline: none;
-  color: rgb(33, 54, 2) !important;
+  color: #fff !important;
 }
 .img-fruit {
   width: 250px; /* Adjust as needed */
@@ -147,9 +147,67 @@ body {
     rgba(233, 204, 232, 1) 56%
   );
 }
-.subscribe-btn{
+.subscribe-btn {
   border-radius: 50%;
   background-color: black;
   color: #fff;
 }
+.more-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
+.more-btn:hover,
+.more-btn.hovered {
+  border: 1px solid #000; /* Change border color and thickness as needed */
+}
+.instock{
+  color: green;
+}
+.vertical-line {
+  width: 1px; /* Adjust thickness as needed */
+  height: 10px; /* Adjust height as needed */
+  background-color: black; /* Adjust color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+}
+.second-nav{
+background-color: #2B8622;
+color: #fff !important;
+}
+.navbar-brand,.nav-link{
+  color: white !important;
+}
+.navbar {
+  display: flex;
+  /* background-color: #f8f9fa; */
+  padding: 10px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
