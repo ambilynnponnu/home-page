@@ -3,28 +3,33 @@ import Navbar from "./navbar.component";
 import { FiShare } from "react-icons/fi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import StarRatings from 'react-star-ratings';
 import { FaRupeeSign } from "react-icons/fa";
 import { FaGripLinesVertical } from "react-icons/fa6";
 function ProductDetailscomponent() {
-  const { productId } = useParams();
   const [products, setProducts] = useState(null);
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // Fetch product details using productId
+    const searchParams = new URLSearchParams(window.location.search);
+    const productId = searchParams.get('productId');
+    const filter = {
+      productId: productId,
+    };
+  
+    const queryString = new URLSearchParams(filter).toString();
     axios
-      .get(`/productDetails?productId=${7}`)
-      .then((res) => {
-        setProducts(res.data); // Set products to res.data
-      })
-      .catch((err) => {
-        console.error(err);
-        // Handle error as needed
-      });
-  }, [productId]); // Run effect when productId changes
+    .get(`/productDetails?${queryString}`)
+    .then((res) => {
+      console.log(res);
+      setProducts(res?.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      // Handle error as needed
+    });
+  }, [])
   const handleToggleDisclaimer = () => {
     setShowFullDisclaimer(!showFullDisclaimer);
   };
@@ -103,8 +108,8 @@ function ProductDetailscomponent() {
                 <h2 className="card-title">Disclaimer:</h2>
                 <p className="card-text">
                   {showFullDisclaimer
-                    ? product.Disclaimer
-                    : `${product.Disclaimer.slice(0, 100)}...`}
+                    ? product?.Disclaimer
+                    : `${product?.Disclaimer?.slice(0, 100)}...`}
                 </p>
                 <button
                   type="button"

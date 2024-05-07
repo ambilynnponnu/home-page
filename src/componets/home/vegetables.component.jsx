@@ -31,21 +31,11 @@ function Vegetablescomponent({ props }) {
 
   const handleSubmit = (productId) => {
     const filter = {
-      productId: 7,
+      productId: productId,
     };
 
     const queryString = new URLSearchParams(filter).toString();
-    axios
-      .get(`/productDetails?${queryString}`)
-      .then((res) => {
-        // setProductsDetails(res.data);
-        navigate("/vegetables/detailsPage");
-        // Redirect or handle success as needed
-      })
-      .catch((err) => {
-        console.error(err);
-        // Handle error as needed
-      });
+    navigate("/vegetables/detailsPage?" + queryString);
   };
  
   return (
