@@ -20,9 +20,10 @@ const products = [
     description:
       "Rich in vitamin C, supporting immune health and collagen production,Excellent source of vitamin, promoting bone health and blood clotting, Low in calories and high in fiber, aiding in digestion and weight management.",
     category: "vegetable",
-    description:"Cabbage is a versatile vegetable prized for its crisp texture and mildly sweet to peppery flavor. It comes in various types, including green, red, savoy, and Napa. Rich in vitamins C and K, as well as dietary fiber, cabbage can be enjoyed raw in salads or coleslaws, cooked in stir-fries or soups, and fermented into sauerkraut. It's a low-calorie food with potential health benefits, such as aiding digestion and supporting immune function.",
-    Disclaimer:"Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use"
-  
+    description:
+      "Cabbage is a versatile vegetable prized for its crisp texture and mildly sweet to peppery flavor. It comes in various types, including green, red, savoy, and Napa. Rich in vitamins C and K, as well as dietary fiber, cabbage can be enjoyed raw in salads or coleslaws, cooked in stir-fries or soups, and fermented into sauerkraut. It's a low-calorie food with potential health benefits, such as aiding digestion and supporting immune function.",
+    Disclaimer:
+      "Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use",
   },
   {
     name: "Green Capsicum 500g",
@@ -32,9 +33,10 @@ const products = [
     id: 7,
     price: "50.00( ₹22.50/250 g)",
     category: "vegetable",
-    description:"Green Capsicums come in different shapes and sizes to make it easy for you to add vibrant colour and sweet taste wherever you want to. Green Capsicums add a sweet taste and delicious flavour to your favourite dishes. You can cut them into wedges to eat fresh, dice them to mix into dishes, or leave them halved so you can stuff them and bake them. They can be roasted and peeled, stuffed and baked, added to soups and stews, or pickled like pimentos. So, go ahead, buy Green Capsicum 500 g online now!",
-    Disclaimer:"Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use"
-  
+    description:
+      "Green Capsicums come in different shapes and sizes to make it easy for you to add vibrant colour and sweet taste wherever you want to. Green Capsicums add a sweet taste and delicious flavour to your favourite dishes. You can cut them into wedges to eat fresh, dice them to mix into dishes, or leave them halved so you can stuff them and bake them. They can be roasted and peeled, stuffed and baked, added to soups and stews, or pickled like pimentos. So, go ahead, buy Green Capsicum 500 g online now!",
+    Disclaimer:
+      "Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use",
   },
   {
     name: "potato",
@@ -44,9 +46,10 @@ const products = [
     id: 11,
     price: "₹44.00( ₹11.00/250 g)",
     category: "vegetable",
-    description:"Potato is a root vegetable and the most versatile of all. It is widely used across Indian kitchens paired with numerous other vegetables for preparation of several delicacies. Be it Brinjal, Cauliflower, Tomato, Onion or be it Soyabean Chunks or the Spinach clan- Potatoes goes with all for delicious cuisines. Buy Potato per kg online now.",
-    Disclaimer:"Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use"
-    ,
+    description:
+      "Potato is a root vegetable and the most versatile of all. It is widely used across Indian kitchens paired with numerous other vegetables for preparation of several delicacies. Be it Brinjal, Cauliflower, Tomato, Onion or be it Soyabean Chunks or the Spinach clan- Potatoes goes with all for delicious cuisines. Buy Potato per kg online now.",
+    Disclaimer:
+      "Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use",
   },
   {
     name: "Banana",
@@ -56,6 +59,10 @@ const products = [
     id: 10,
     price: 40,
     category: "Fruit",
+    description:
+      "Bananas are elongated, curved fruits with a vibrant yellow peel when ripe, though some varieties feature green, red, or purple skins. They belong to the Musaceae family and are botanically classified as berries. Their creamy flesh is rich in natural sugars, particularly fructose, which gives them their sweet taste. Bananas are a good source of potassium, vitamin C, and vitamin B6, and they also contain fiber and antioxidants. They are commonly eaten raw as a quick and nutritious snack, sliced onto cereal or yogurt, blended into smoothies, or used in baking and cooking. This tropical fruit is popular worldwide and is known for its convenient packaging, making it a go-to choice for on-the-go energy and nutrition.",
+    Disclaimer:
+      "Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use",
   },
   {
     name: "Mango",
@@ -65,6 +72,10 @@ const products = [
     id: 9,
     price: 70,
     category: "Fruit",
+    description:
+      "Mangoes are tropical stone fruits known for their sweet, juicy flesh and distinctive aroma. Belonging to the Anacardiaceae family, mangoes come in various shapes, sizes, and colors, ranging from green to yellow, orange, or red when ripe. Their smooth skin covers succulent, fibrous pulp surrounding a large, flat seed. Mangoes are rich in vitamins A, C, and E, as well as dietary fiber and antioxidants like beta-carotene. They are enjoyed fresh, sliced, or diced in salads, smoothies, or desserts, and are a popular ingredient in salsas and chutneys. With origins in South Asia, mangoes are now cultivated in tropical and subtropical regions worldwide, delighting taste buds with their luscious flavor and nutritional benefits.",
+    Disclaimer:
+      "Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use",
   },
   {
     name: "Orange",
@@ -74,6 +85,10 @@ const products = [
     id: 8,
     price: 30,
     category: "Fruit",
+    description:
+      "Oranges are citrus fruits renowned for their bright color, tangy-sweet flavor, and refreshing juiciness. With a thick, dimpled peel that ranges from vibrant orange to yellowish-orange, oranges encase juicy segments filled with pulp and seeds. They are packed with vitamin C, providing a boost to the immune system, and also contain dietary fiber and antioxidants. Oranges are commonly enjoyed fresh, squeezed into juice, or used in various culinary applications, from salads and desserts to savory dishes. Hailing from subtropical regions, oranges are widely cultivated globally and cherished for their vibrant taste and nutritional benefits.",
+    Disclaimer:
+      "Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use",
   },
 ];
 module.exports = ({ httpPort = 3000 }) => {
@@ -221,15 +236,15 @@ module.exports = ({ httpPort = 3000 }) => {
     const { productId } = req.query;
 
     const result = [];
-    products.forEach(prod => {
-      if(productId && prod?.id == productId) {
-        result.push(prod)
+    products.forEach((prod) => {
+      if (productId && prod?.id == productId) {
+        result.push(prod);
       }
-    })
+    });
 
     // Send the list of products as a JSON response
     res.json(result);
-  });
+  });
 
   // Route to add a product to the cart
   app.post("/add-to-cart", (req, res) => {

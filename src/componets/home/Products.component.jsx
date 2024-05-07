@@ -27,21 +27,20 @@ function ProductsComponent() {
         // Handle error as needed
       });
   }, []);
+  const handleSubmit = (productId) => {
+    const filter = {
+      productId: productId,
+    };
 
+    const queryString = new URLSearchParams(filter).toString();
+    navigate("/vegetables/detailsPage?" + queryString);
+  };
   return (
     <div>
       <Navbar />
       <div className="p-4 d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
         <div className="mb-3 mb-lg-0">
-          <h className="sub-Head p-2">Our Natural Fruits</h>
-        </div>
-        <div>
-          <Button className="all-product me-2 mb-2 mb-lg-0">
-            All Products
-          </Button>{" "}
-          <Button className="all-product me-2 mb-2 mb-lg-0">Fruits</Button>{" "}
-          <Button className="all-product me-2 mb-2 mb-lg-0">Vegetables</Button>{" "}
-          <Button className="all-product mb-2 mb-lg-0">Meat</Button>{" "}
+          <h className="sub-Head p-2">Our Natural Vegetables</h>
         </div>
       </div>
       <div>
@@ -49,7 +48,10 @@ function ProductsComponent() {
           <div className="row mb-4">
             {products.map((vegetable, index) => (
               <div className="col-4" key={index}>
-                <div className="card veg-card mb-4">
+                <div
+                  className="card veg-card mb-4"
+                  onClick={() => handleSubmit(vegetable.id)}
+                >
                   <div className="d-flex justify-content-center align-items-center">
                     <img
                       src={vegetable.image}
@@ -67,10 +69,7 @@ function ProductsComponent() {
                       </strong>
                     </p>
                     <p>Free Delivery</p>
-                    {/* <a
-                      class="btn btn-primary"
-                      onClick={() => navigate("/addtocart")}
-                    >
+                    {/* <a  class="btn btn-primary" onClick={() => handleSubmit(vegetable.id,1)}>
                       <span className="pe-2">
                         <FaLock />
                       </span>
@@ -78,6 +77,15 @@ function ProductsComponent() {
                     </a> */}
                   </div>
                 </div>
+                {}
+                {/* Render ProductDetailscomponent here */}
+                {/* {!Details && (
+                  <div>
+                    <ProductDetailscomponent
+                      productsDetails={productsDetails}
+                    />
+                  </div>
+                )} */}
               </div>
             ))}
           </div>
