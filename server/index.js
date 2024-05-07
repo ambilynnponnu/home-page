@@ -20,6 +20,9 @@ const products = [
     description:
       "Rich in vitamin C, supporting immune health and collagen production,Excellent source of vitamin, promoting bone health and blood clotting, Low in calories and high in fiber, aiding in digestion and weight management.",
     category: "vegetable",
+    description:"Cabbage is a versatile vegetable prized for its crisp texture and mildly sweet to peppery flavor. It comes in various types, including green, red, savoy, and Napa. Rich in vitamins C and K, as well as dietary fiber, cabbage can be enjoyed raw in salads or coleslaws, cooked in stir-fries or soups, and fermented into sauerkraut. It's a low-calorie food with potential health benefits, such as aiding digestion and supporting immune function.",
+    Disclaimer:"Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use"
+  
   },
   {
     name: "Green Capsicum 500g",
@@ -39,8 +42,11 @@ const products = [
       "https://www.shutterstock.com/image-photo/top-down-view-many-organic-freshly-2360416693",
     quantity: "One Unit",
     id: 11,
-    price: 70,
+    price: "₹44.00( ₹11.00/250 g)",
     category: "vegetable",
+    description:"Potato is a root vegetable and the most versatile of all. It is widely used across Indian kitchens paired with numerous other vegetables for preparation of several delicacies. Be it Brinjal, Cauliflower, Tomato, Onion or be it Soyabean Chunks or the Spinach clan- Potatoes goes with all for delicious cuisines. Buy Potato per kg online now.",
+    Disclaimer:"Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary Please read the label, directions and warnings carefully before use"
+    ,
   },
   {
     name: "Banana",
