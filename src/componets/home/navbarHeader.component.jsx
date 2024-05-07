@@ -26,7 +26,7 @@ function NavbarHeadercomponent() {
               </li>
               <li className="nav-item dropdown">
                 <a href="#" className="nav-link">
-                Groceries
+                Fruits
                 </a>
                 <ul className="dropdown-menu">
                   <li>
@@ -42,7 +42,7 @@ function NavbarHeadercomponent() {
               </li>
               <li className="nav-item dropdown">
                 <a href="#" className="nav-link">
-                Groceries
+                Vegetables
                 </a>
                 <ul className="dropdown-menu">
                   <li>
@@ -58,7 +58,7 @@ function NavbarHeadercomponent() {
               </li>
               <li className="nav-item dropdown">
                 <a href="#" className="nav-link">
-                  Groceries
+                  All Categories
                 </a>
                 <ul className="dropdown-menu">
                   <li>
